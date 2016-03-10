@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'courses/index'
+
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations'}
   resources :feedbacks, :only => [:new, :create]
   root :to => 'libraries#show', :id => 1
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
 	get "search", to: "libraries#search", :id => 1, :as => 'search_library'
 	get "suggestions", to: "libraries#show_suggestions", :id => 1, :as => 'suggestions_library'
 
+  resources :courses, :only => [:index]
   resources :libraries, :except => [:show], :shallow => true do
 		# member do
      #  get "search", to: "libraries#search"
