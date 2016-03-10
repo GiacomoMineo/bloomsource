@@ -2,16 +2,18 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations'}
   resources :feedbacks, :only => [:new, :create]
-  root :to =>'pages#index'
- 
- # resources :libraries
-  resources :libraries, shallow: true do
-		member do
-      get "search", to: "libraries#search"
-			get "suggestions", to: "libraries#show_suggestions"
-			put "subscribe", to: "libraries#subscribe"
-			put "unsubscribe", to: "libraries#unsubscribe"
-		end
+  root :to => 'libraries#show', :id => 1
+
+	get "search", to: "libraries#search", :id => 1, :as => 'search_library'
+	get "suggestions", to: "libraries#show_suggestions", :id => 1, :as => 'suggestions_library'
+
+  resources :libraries, :except => [:show], :shallow => true do
+		# member do
+     #  get "search", to: "libraries#search"
+		# 	get "suggestions", to: "libraries#show_suggestions"
+		# 	put "subscribe", to: "libraries#subscribe"
+		# 	put "unsubscribe", to: "libraries#unsubscribe"
+		# end
     #resources :categories
 		resources :invitations, :except => [:index] do
 			member do

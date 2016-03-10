@@ -10,20 +10,11 @@
 		        <span class="icon-bar"></span>
 		    </button>
 		    <h1 class="main-logo">
-            <% if @library && @library.topic %>
-              <%= link_to library_path(@library) do %>
-                  <span class="logo-glyph"></span>
-                  <span class="logo-type">
-                    <%= @library.topic %>
-                  </span>
-              <% end %>
-            <% else %>
-              <%= link_to root_path do %>
-                  <span class="logo-glyph"></span>
-                  <span class="logo-type">
-                    Coilbee
-                  </span>
-              <% end %>
+            <%= link_to root_path do %>
+                <span class="logo-glyph"></span>
+                <span class="logo-type">
+                  Coilbee
+                </span>
             <% end %>
 			</h1>
 			<% if @library && @library.topic && current_user && current_user.edit? && permitted_to?(:edit, @library) %>
