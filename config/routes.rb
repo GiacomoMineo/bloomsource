@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations'}
   resources :feedbacks, :only => [:new, :create]
-  root :to =>'pages#index'
+  root :to =>'libraries#show', :id => 1
  
  # resources :libraries
   resources :libraries, shallow: true do
