@@ -2,7 +2,6 @@
 html { height: 100%; }
 body {
 	height: 100%;
-	padding-top: 80px;
 }
 .wrapper {
 	min-height: 100%;
@@ -14,15 +13,34 @@ body {
 }
 
 // Fonts
-@include font-face(Montserrat, Montserrat-Regular, 400, normal, otf);
-@include font-face(Montserrat, Montserrat-Light, 300, normal, otf);
-@include font-face(Montserrat, Montserrat-Bold, 700, normal, otf);
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300|PT+Serif:700);
 * {
-	font-family: 'Montserrat', 'Helvetica', sans-serif;
+	font-family: 'Open Sans', 'Helvetica', sans-serif;
 }
 
 h1, h2, h3 {
 	font-weight: 300;
+}
+
+// Global
+.main-content {
+	@include tablet {
+		padding-top: 30px;
+	}
+	margin-bottom: 140px;
+}
+.aside-content {
+	padding-top: 30px;
+	@include tablet {
+		padding-bottom: 75px;
+	}
+	#menu-aside {
+	    padding-right: 15px;
+	}
+}
+.normal-spacing {
+	padding-bottom: 45px;
 }
 
 // Anchor reset
@@ -57,21 +75,6 @@ a {
 	.tooltip-inner {
 	}
 }
-.main-content {
-	margin-bottom: 140px;
-}
-.aside-content {
-	@include tablet {
-		position: fixed;
-		height: 100%;
-	    overflow: hidden;
-	}
-	#menu-aside {
-	    height: 76%;
-	    overflow: auto;
-	    padding-right: 15px;
-	}
-}
 
 // Nav items transitions
 nav li a {
@@ -87,36 +90,26 @@ $height: 45px;
     height: 45px;
 }
 .main-logo {
-	$size: 26px;
-	height: $size;
-	line-height: $size;
 	margin: 0;
 	display: inline-block;
 	vertical-align: text-top;
 	a {
-		height: $size;
-		line-height: $size;
 		display: inline-block;
-		padding: 3px;
 	}
 	// Logo Icon
 	.logo-glyph {
 		display: inline-block;
-		width: $size + 6;
-		height: $size + 6;
 		background: url('logo.png') no-repeat center center;
 		background-size: 100%;
 		vertical-align: middle;
 	}
 	// Logo name
 	.logo-type {
+		font-family: 'PT Serif', serif;
 		display: inline-block;
 		color: $color-main;
-		font-weight: 900;
-		font-size: 26px;
-		letter-spacing: -1px;
-		vertical-align: middle;
-		margin-left: -6px;
+		font-weight: bold;
+		font-size: 28px;
 	}
 }
 .directory-btn-wrapper {
@@ -232,6 +225,7 @@ $height: 45px;
     outline: none;
     border-radius: 20px;
     overflow: hidden;
+    background-color: $color-main;
     &.clicked {
     	background-color: $color-main;
     	border-bottom-left-radius: 0;

@@ -1,16 +1,1 @@
-<div class="library-intro">
-	<h1>Welcome to the <%= @library.topic %> Link Collection</h1>
-	<h3 class="library-intro-desc"><%= @library.description %></h3>
-	<p class="user-ref">Created by <span><%= @library.creator.user_name %></span></p>
-	<p class="links-total"><%= @total_entries %><span class="glyphicon glyphicon-link"></span></p>
-	<%= form_tag(search_library_path(@library), :method => "get", id: "search-form", role: "search", class: 'search-welcome') do %>
-		<div class="search-input">
-			<%= text_field_tag :q, params[:q], class: "search-field", placeholder: "Search", id: "search-tag" %>
-			<label class="search-label" for="search-tag"></label>
-		</div>
-		<%= button_tag type: "submit", class: "search-submit" do %>
-			<span class="glyphicon glyphicon-search"></span>
-		<% end %>
-	<% end %>
-	<p class="library-intro-suggestion">Select a topic from the menu or use the search bar to get started.</p>
-</div>
+<div class="library-intro-suggestion"><p>Select a topic from the menu or use the search bar to get started.</p></div>

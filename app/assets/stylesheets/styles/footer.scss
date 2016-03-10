@@ -68,11 +68,11 @@ $footer-height: 58px;
 	> li {
 		display: inline-block;
 		a {
-			color: #fff;
+			color: $color-dark-2;
 			padding: 0 4px;
 			@include transition(color 0.3s ease);
 			&:hover {
-				color: $color-main-light;
+				color: #000;
 			}
 		}
 	}

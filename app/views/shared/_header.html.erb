@@ -10,12 +10,9 @@
 		        <span class="icon-bar"></span>
 		    </button>
 		    <h1 class="main-logo">
-            <%= link_to root_path do %>
-                <span class="logo-glyph"></span>
-                <span class="logo-type">
-                  Coilbee
-                </span>
-            <% end %>
+              <%= link_to root_path do %>
+                  <span class="logo-type">Hermione</span>
+              <% end %>
 			</h1>
 			<% if @library && @library.topic && current_user && current_user.edit? && permitted_to?(:edit, @library) %>
 				<%= link_to edit_library_path(@library), class: "navbar-header-link" do %>
@@ -28,19 +25,9 @@
     	</div>
 	    <div class="collapse navbar-collapse" id="navbar-main-collapse">
 	        <ul class="nav navbar-nav navbar-right">
-	        	<% if @library && @library.topic %>
-		        	<li class="search-bar">
-						<%= form_tag(search_library_path(@library), :method => "get", id: "search-form", role: "search") do %>
-							<div class="search-input">
-								<%= text_field_tag :q, params[:q], class: "search-field", placeholder: "Search", id: "search-tag" %>
-								<label class="search-label" for="search-tag"></label>
-							</div>
-							<%= button_tag type: "submit", class: "search-submit" do %>
-								<span class="glyphicon glyphicon-search"></span>
-							<% end %>
-						<% end %>
-					</li>
-				<% end %>
+	        	<li><a class="<%= 'current' if @library %>" href="/">Library</a></li>
+	        	<li><a class="<%= 'current' if @course %>" href="/courses">Crash Courses</a></li>
+	        	<li><a href="http://medium.stfi.re/on-startups/startups-freedom-60a96555abc3?ref=theworkinglunch.co&sf=aabrer#.wfnr95ba2">Why this?</a></li>
 				<% if current_user %>
 					<% if @library && @library.topic %>
 						<% if permitted_to? :edit, @library %>
@@ -51,10 +38,8 @@
 									</div>
 								</li>
 						<% end %>
-						<li><%= link_to new_library_invitation_path(@library), class: "share-link" do %>
-							<span class="glyphicon glyphicon-share-alt"></span>Share<% end %></li>
 					<% end %>
-					<% if (@library && (permitted_to? :edit, @library)) || !@library %> 
+					<% if (@library && (permitted_to? :edit, @library)) %> 
 						<% if current_user.read? %>
 							<li><%= link_to toggle_edit_path, method: :put do %><span class="glyphicon glyphicon-edit"></span>Edit mode<% end %>
 								<div class="tip" id="tip-user-editmode">
@@ -80,7 +65,7 @@
 					</li>
 				<% else %>
 					<li>
-						<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-success signup-btn small nav-btn', id: "signup-btn-header" %>
+						<%= link_to "Sign up", new_user_registration_path, :class => 'btn signup-btn small nav-btn', id: "signup-btn-header" %>
 					</li>
 					<li>
 						<%= link_to "Login", new_user_session_path, :class => 'btn login-btn small nav-btn', id: "login-btn-header" %>

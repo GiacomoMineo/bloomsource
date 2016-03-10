@@ -11,21 +11,58 @@
 <body>
 	<%= render 'shared/header.html.erb'%>
 	<div class="container-fluid wrapper">
-		<div class="row">
-			<% if @library && @library.topic %>
-				<div class="col-lg-3 col-lg-offset-1 col-sm-3 col-xs-0 aside-content">
-					<%= render 'shared/library_menu.html.erb' %>
+		<% unless @course %>
+			<% if @landing && @library && @library.topic %>
+				<div class="row">
+					<div class="intro">
+						<div class="library-intro">
+							<div class="library-intro-header">
+								<div class="col-xs-12 col-lg-10 col-lg-offset-1">
+									<h1>Startup library</h1>
+									<h3 class="library-intro-desc">The best advice, lessons, and tips on entrepreneurship to you help you build your startup</h3>
+								</div>
+							</div>
+							<div class="library-intro-banner">
+								<div class="col-xs-12 col-lg-10 col-lg-offset-1">
+									<%= form_tag(search_library_path(@library), :method => "get", id: "search-form", role: "search", class: 'search-welcome') do %>
+										<div class="search-input">
+											<%= text_field_tag :q, params[:q], class: "search-field", placeholder: "What are you looking for?", id: "search-tag" %>
+											<label class="search-label" for="search-tag"></label>
+										</div>
+										<%= button_tag type: "submit", class: "search-submit" do %>
+											<span class="glyphicon glyphicon-search"></span>
+										<% end %>
+									<% end %>
+									<div class="share-wrapper">
+										<span><span class="strong">Share</span> via</span>
+										<%= render '/shared/social' %>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-7 col-lg-offset-4 col-sm-9 col-sm-offset-3 col-xs-12 main-content">
 			<% else %>
-				<div class="col-lg-10 col-lg-offset-1 col-xs-12 main-content">
+				<div class="normal-spacing"></div>
 			<% end %>
-					<%= yield %>
-				</div>
-	  	</div>
-	  	<div class="row">
-	  		<%= render 'shared/footer.html.erb' %>
-	  	</div>
+			<div class="row">
+				<% if @library && @library.topic %>
+					<div class="col-lg-3 col-lg-offset-1 col-sm-3 col-xs-0 aside-content">
+						<%= render 'shared/library_menu.html.erb' %>
+					</div>
+					<div class="col-lg-7 col-sm-9 col-xs-12 main-content">
+				<% else %>
+					<div class="col-lg-10 col-lg-offset-1 col-xs-12 main-content">
+				<% end %>
+						<%= yield %>
+					</div>
+		  	</div>
+		  	<div class="row">
+		  		<%= render 'shared/footer.html.erb' %>
+		  	</div>
+	  	<% else %>
+	  		<%= yield %>
+	  	<% end %>
 	</div>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

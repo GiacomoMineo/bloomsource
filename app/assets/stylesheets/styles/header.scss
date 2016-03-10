@@ -55,20 +55,23 @@
 		padding-left: 12px;
 		@include tablet { padding-left: 0; }
 		> a {
-			color: $color-main !important;
-			font-weight: 400;
-			font-size: 13px !important;
+			color: $color-dark !important;
+			font-weight: bold !important;
+			font-size: 14px !important;
 			line-height: 20px !important;
 			padding: 12px 15px !important;
+			text-transform: uppercase;
 			&:hover {
-				background-color: #fff !important;
-				color: $color-main-light !important;
+				color: #000 !important;
 			}
 			&:focus {
 				background-color: #fff !important;
 			}
 			.glyphicon {
 				padding-right: 6px;
+			}
+			&.current {
+				color: $color-main !important;
 			}
 		}
 	}
@@ -94,9 +97,9 @@
 	}
 	.user-toggle {
 		display: inline-block;
-		color: $color-main !important;
-		font-weight: normal;
-    	font-size: 15px;
+		color: $color-dark !important;
+		font-weight: bold !important;
+		font-size: 14px !important;
     	line-height: 20px !important;
     	padding: 12px 15px;
     	cursor: pointer;
@@ -106,7 +109,7 @@
     		padding-right: 12px;
     	}
     	&:hover {
-    		color: $color-main-light !important;
+    		color: #000 !important;
     	}
 	}
 }
@@ -167,7 +170,12 @@
 	padding: 0 15px;
 }
 #search-form {
+	margin-bottom: 12px;
 	position: relative;
+	@include tablet {
+		margin-bottom: 0;
+		min-width: 360px;
+	}
 	$offset: 42px;
 	.search-input {
 		position: relative;
@@ -176,9 +184,6 @@
 		vertical-align: text-top;
 		width: 100%;
 		padding-right: $offset;
-		@include tablet {
-			width: auto;
-		}
 	}
 	.search-field {
 		position: relative;
@@ -189,11 +194,11 @@
 		margin-top: 4px;
 		padding: 7px;
 		line-height: 22px;
-		font-size: 16px;
-		font-weight: 300;
+		font-size: 14px;
+		font-weight: bold;
 		background: transparent;
 		width: 100%;
-		color: $color-text-dark;
+		color: #000;
 		&:focus {
 			outline: none;
 			border: none;
@@ -216,11 +221,11 @@
 		left: 0;
 		width: 100%;
 		padding-right: $offset;
-		border-bottom: 1px solid $color-main;
+		border-bottom: 1px solid $color-dark-2;
 	}
 	.search-label::after {
 		margin-top: -1px;
-		border-bottom: 3px solid $color-main;
+		border-bottom: 3px solid $color-dark-2;
 		-webkit-transform: translate3d(-100%, 0, 0);
 		transform: translate3d(-100%, 0, 0);
 		-webkit-transition: -webkit-transform 0.3s;
@@ -245,11 +250,11 @@
 		vertical-align: text-top;
 		background-color: transparent;
 		> span {
-			color: $color-main;
+			color: $color-dark-2;
 			@include transition(color 0.3s ease);
 		}
 		&:hover > span {
-			color: $color-main-light;
+			color: #000;
 		}
 		&:focus {
 			outline: none;

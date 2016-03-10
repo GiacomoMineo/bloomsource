@@ -13,6 +13,7 @@ class LibrariesController < ApplicationController
 	end
 
 	def show
+		@landing = true
 		@categories = @library.categories
 		tot = 0
 		@library.categories.each do |c|

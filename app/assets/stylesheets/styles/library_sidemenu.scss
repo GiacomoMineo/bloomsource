@@ -6,7 +6,7 @@ $section-line-height: 24px;
 .menu-title a {
 	padding-left: 16px;
 	font-size: 27px;
-	font-weight: 900;
+	font-weight: bold;
 	letter-spacing: -1px;
 	color: $color-main;
 	@include transition(all 0.3s ease);
@@ -72,7 +72,7 @@ $section-line-height: 24px;
 	.menu-icon-wrapper { line-height: $category-line-height; }
 	.menu-category-link {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: bold;
 		text-decoration: none;
 		text-transform: uppercase;
 		line-spacing: -1px;
@@ -94,7 +94,8 @@ $section-line-height: 24px;
 	.menu-icon-wrapper { line-height: $section-line-height; }
 	.menu-section-link {
 		font-size: 14px;
-		color: $color-text-dark;
+		font-weight: normal;
+		color: #000;
 		text-decoration: none;
 		line-height: $section-line-height;
 	}

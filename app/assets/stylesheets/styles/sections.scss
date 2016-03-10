@@ -1,31 +1,68 @@
 /* Sections */
 
 // Library intro page
+.intro {
+	@include tablet {
+		padding: 0;
+	}
+}
 .library-intro {
+	margin-top: 45px;
 	text-align: center;
-	> h1 {
-		font-size: 36px;
-		margin-top: 16px;
-	}
-	.library-intro-desc {
-		font-size: 23px;
-		line-height: 32px;
-	}
-	.library-intro-suggestion {
-		padding-top: 12px;
-		font-weight: normal;
-		font-size: 16px;
-		color: $color-main;
-	}
-	.library-intro-image {
-		max-height: 80px;
-	}
-	.links-total {
-		font-size: 12px;
-		> span {
-			padding-left: 4px;
+	.library-intro-header {
+		background-color: $color-accent;
+		padding: 45px 0;
+		color: #fff;
+		text-align: left;
+		@extend %clearfix;
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 16px;
+			letter-spacing: 1px;
+		}
+		.library-intro-desc {
+			font-size: 14px;
 		}
 	}
+	.library-intro-banner {
+		background-color: $color-light;
+		width: 100%;
+		padding: 8px 0;
+		@extend %clearfix;
+		#search-form {
+			@include tablet {
+				float: left;
+			}
+		}
+		.share-wrapper {
+			height: 40px;
+			@include tablet {
+				float: right;
+			}
+			color: $color-dark-2;
+			> span {
+				line-height: 40px;
+			}
+			.strong {
+				font-weight: bold;
+			}
+			.share-buttons {
+				height: 40px;
+				display: inline-block;
+				li {
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+.library-intro-suggestion {
+	padding: 45px 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
 }
 
 // Content
@@ -254,7 +291,8 @@ $entry-spacing: 8px;
 }
 .new-entry-btn {
 	display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: bold;
     line-height: 20px;
     letter-spacing: 1.3px;
     padding: 8px 24px 8px 24px;
@@ -262,6 +300,12 @@ $entry-spacing: 8px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
+    background-color: $color-main;
+    color: #fff;
+    &:hover {
+    	color: #fff;
+    	background-color: $color-main-dark;
+    }
     @include tablet {
     	float: right;
     	margin: 0;
