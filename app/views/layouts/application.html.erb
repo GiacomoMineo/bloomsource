@@ -43,7 +43,25 @@
 					</div>
 				</div>
 			<% else %>
-				<div class="normal-spacing"></div>
+				<div class="row normal-spacing">
+					<div class="library-intro-banner">
+						<div class="col-xs-12 col-lg-10 col-lg-offset-1">
+							<%= form_tag(search_library_path(@library), :method => "get", id: "search-form", role: "search", class: 'search-welcome') do %>
+								<div class="search-input">
+									<%= text_field_tag :q, params[:q], class: "search-field", placeholder: "What are you looking for?", id: "search-tag" %>
+									<label class="search-label" for="search-tag"></label>
+								</div>
+								<%= button_tag type: "submit", class: "search-submit" do %>
+									<span class="glyphicon glyphicon-search"></span>
+								<% end %>
+							<% end %>
+							<div class="share-wrapper">
+								<span><span class="strong">Share</span> via</span>
+								<%= render '/shared/social' %>
+							</div>
+						</div>
+					</div>
+				</div>
 			<% end %>
 			<div class="row">
 				<% if @library && @library.topic %>

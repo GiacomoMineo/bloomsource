@@ -25,34 +25,34 @@
 			font-size: 14px;
 		}
 	}
-	.library-intro-banner {
-		background-color: $color-light;
-		width: 100%;
-		padding: 8px 0;
-		@extend %clearfix;
-		#search-form {
-			@include tablet {
-				float: left;
-			}
+}
+.library-intro-banner {
+	background-color: $color-light;
+	width: 100%;
+	padding: 8px 0;
+	@extend %clearfix;
+	#search-form {
+		@include tablet {
+			float: left;
 		}
-		.share-wrapper {
+	}
+	.share-wrapper {
+		height: 40px;
+		@include tablet {
+			float: right;
+		}
+		color: $color-dark-2;
+		> span {
+			line-height: 40px;
+		}
+		.strong {
+			font-weight: bold;
+		}
+		.share-buttons {
 			height: 40px;
-			@include tablet {
-				float: right;
-			}
-			color: $color-dark-2;
-			> span {
-				line-height: 40px;
-			}
-			.strong {
-				font-weight: bold;
-			}
-			.share-buttons {
-				height: 40px;
-				display: inline-block;
-				li {
-					vertical-align: middle;
-				}
+			display: inline-block;
+			li {
+				vertical-align: middle;
 			}
 		}
 	}

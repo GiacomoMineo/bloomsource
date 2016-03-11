@@ -22,7 +22,7 @@ $(document).ajaxComplete(function(event, xhr, settings) {
 			$('#user_edit_form .in-submit').addClass('success').attr('value', 'Success!');
 			// Edit
 			if(xhr.status == '204') {
-				window.location.replace("/libraries/start-up");
+				window.location.replace("/");
 			// New Signup
 			} else {
 				// Raise google analytics event
