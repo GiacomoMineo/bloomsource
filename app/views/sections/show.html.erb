@@ -1,16 +1,15 @@
 <h2 class="section-title"><%= @section.name %></h2>
 <div class="section-controls">
-	<% if current_user && (permitted_to? :create, Entry.new(section: @section)) %>
-		<% 
-			caption = 
-				if permitted_to? :accept, Entry.new(section: @section) then 
-					'New Entry' 
-				else 
-					'Suggest Entry' 
-				end 
-		%>
-		<%= link_to caption, new_section_entry_path(@section), class: 'btn new-entry-btn' %>
-	<% end %>
+	<% current_user ? btn_class = "" : btn_class = "not-logged" %>
+	<% 
+		caption = 
+			if permitted_to? :accept, Entry.new(section: @section) then 
+				'New Link' 
+			else 
+				'Suggest Link' 
+			end 
+	%>
+	<%= link_to caption, new_section_entry_path(@section), class: 'btn new-entry-btn ' + btn_class %>
 </div>
 <div class="entry-group">
   <%= render "shared/render_entries" %>

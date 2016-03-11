@@ -83,8 +83,8 @@ ready = function() {
 		$('.overlay').hide();
 	});
 
-	// upvote login prompt
-	$('.upvote.not-logged, .downvote.not-logged').click(function(e) {
+	// Login prompt
+	$('.entry-vote.not-logged, .new-entry-btn.not-logged').click(function(e) {
 		e.stopImmediatePropagation();
 		e.preventDefault();
 		$('.overlay').hide();

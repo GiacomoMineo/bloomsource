@@ -41,7 +41,7 @@
     <div class="entry-menu">
       <!-- vote -->
       <% current_user ? vote_class = "" : vote_class = "not-logged" %>
-      <%= link_to like_entry_path(entry), { method: :put, :class => "entry-menu-icon entry-vote" + vote_class, 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "Upvote", 'aria-hidden' => "true" } do %>
+      <%= link_to like_entry_path(entry), { method: :put, :class => "entry-menu-icon entry-vote " + vote_class, 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "Upvote", 'aria-hidden' => "true" } do %>
         <span class="glyphicon glyphicon-triangle-top"></span><span class="counter"><%= entry.rating %></span>
       <% end %>
       <!-- share -->

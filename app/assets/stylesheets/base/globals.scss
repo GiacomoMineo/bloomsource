@@ -56,6 +56,8 @@ a {
 
 // Button transitions
 .btn {
+	&:active { color: #fff; }
+	&:focus { color: #fff; }
 	@include transition(all 0.3s ease);
 }
 
@@ -172,11 +174,12 @@ $height: 45px;
 .login-btn {
 	position: relative;
 	display: inline-block;
-	font-size: 17px;
+	font-size: 16px;
+	font-weight: bold;
 	color: $color-main;
 	padding: 4px 8px 0;
 	&:hover {
-		color: $color-main;
+		color: $color-main-dark;
 	}
 	&:focus {
 		color: $color-main;
@@ -215,8 +218,9 @@ $height: 45px;
 // Signup
 .signup-btn {
 	display: inline-block;
-    font-weight: 300;
-    font-size: 17px;
+	font-weight: bold;
+    font-size: 16px;
+    color: #fff;
     letter-spacing: 1px;
     padding: 16px 38px;
     text-decoration: none;
@@ -247,6 +251,10 @@ $height: 45px;
     		color: #fff !important;
     		background-color: $color-main-dark !important;
     	}
+    }
+    &:hover {
+    	background-color: $color-main-dark;
+    	color: #fff;
     }
 }
 
