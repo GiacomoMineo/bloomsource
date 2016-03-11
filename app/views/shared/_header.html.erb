@@ -27,7 +27,7 @@
 	        <ul class="nav navbar-nav navbar-right">
 	        	<li><a class="<%= 'current' if @library %>" href="/">Library</a></li>
 	        	<li><a class="<%= 'current' if @course %>" href="/courses">Crash Courses</a></li>
-	        	<li><a href="http://medium.stfi.re/on-startups/startups-freedom-60a96555abc3?ref=theworkinglunch.co&sf=aabrer#.wfnr95ba2">Why this?</a></li>
+	        	<li><a target="_blank" href="http://medium.stfi.re/on-startups/startups-freedom-60a96555abc3?ref=theworkinglunch.co&sf=aabrer#.wfnr95ba2">Why this?</a></li>
 				<% if current_user %>
 					<% if @library && @library.topic %>
 						<% if permitted_to? :edit, @library %>
