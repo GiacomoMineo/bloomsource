@@ -13,7 +13,10 @@
 		background-color: $color-accent;
 		padding: 45px 0;
 		color: #fff;
-		text-align: left;
+		text-align: center;
+		@include tablet {
+			text-align: left;
+		}
 		@extend %clearfix;
 		h1 {
 			font-size: 36px;
@@ -38,6 +41,7 @@
 	}
 	.share-wrapper {
 		height: 40px;
+		text-align: center;
 		@include tablet {
 			float: right;
 		}
@@ -58,11 +62,13 @@
 	}
 }
 .library-intro-suggestion {
-	padding: 45px 0;
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	color: #000;
+	> p {
+		padding: 45px 0 550px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+	}
 }
 
 // Content
