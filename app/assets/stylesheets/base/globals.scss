@@ -31,12 +31,13 @@ h1, h2, h3 {
 	margin-bottom: 140px;
 }
 .aside-content {
+	position: relative;
 	padding-top: 30px;
 	@include tablet {
 		padding-bottom: 75px;
 	}
 	#menu-aside {
-	    padding-right: 15px;
+	    padding-right: 45px;
 	}
 }
 .normal-spacing {

@@ -181,6 +181,11 @@ ready = function() {
 		$('#feedback_form .in-error').html("");
 	});
 
+	$('.main-content, .aside-content').stickysidebar({
+      // Settings
+      additionalMarginTop: 75
+    });
+
 	bind_group_filter();
 	enable_tooltips();
 
