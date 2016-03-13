@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 		@category.library = @library
 
 		if @category.save 
-			redirect_to library_path(@library)
+			redirect_to root_path
 		else 
 			render 'new' 
 		end 
@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
 
 	def destroy
 		@category.destroy
-		redirect_to library_path(@library), :notice => "The category has been deleted"
+		redirect_to root_path, :notice => "The category has been deleted"
 	end
 
 	def edit
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
 
 	def update
 		if @category.update_attributes(category_params)
-			redirect_to library_path(@category.library), :notice => "The library has been edited"
+			redirect_to root_path, :notice => "The library has been edited"
 		else
 			render 'edit'
 		end
