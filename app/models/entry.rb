@@ -34,13 +34,13 @@ class Entry < ActiveRecord::Base
 		.order(cached_votes_score: :desc, updated_at: :desc, created_at: :asc)
 	end
 
-  # includes read marks if user != nil
-	scope :prepare_for, ->(user) do
-		prepare.possibly_with_read_marks(user)
-	end
-	scope :possibly_with_read_marks, ->(user) do
-		with_read_marks_for(user) if user
-	end
+  	# includes read marks if user != nil
+	#scope :prepare_for, ->(user) do
+	#	prepare.possibly_with_read_marks(user)
+	#end
+	#scope :possibly_with_read_marks, ->(user) do
+	#	with_read_marks_for(user) if user
+	#end
 
 	# scope for all entries in a certain library
 	scope :in_library, ->(library) do
