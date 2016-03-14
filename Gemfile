@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'acts_as_votable'
 
 # new posts
-gem 'unread'
+#gem 'unread'
 
 # authentication
 gem 'devise'

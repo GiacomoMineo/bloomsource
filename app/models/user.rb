@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :moderated_libraries, :class_name => "Library"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  acts_as_reader
+  #acts_as_reader
   has_many :subscriptions
   has_many :libraries, through: :subscriptions
   has_many :libraries_created, :class_name => "Library", :foreign_key => "creator_id"
