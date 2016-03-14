@@ -95,7 +95,7 @@ $section-line-height: 24px;
 	.menu-section-link {
 		font-size: 14px;
 		font-weight: normal;
-		color: #000;
+		color: $color-fade;
 		text-decoration: none;
 		line-height: $section-line-height;
 	}
@@ -109,9 +109,9 @@ $section-line-height: 24px;
 		}
 	}
 	&.current {
-		.menu-section-link { color: $color-main; }
-		.menu-section-count { color: $color-main; }
-		.menu-section-count > span { color: $color-main; }
+		.menu-section-link { color: #0099cc; }
+		.menu-section-count { color: #0099cc; }
+		.menu-section-count > span { color: #0099cc; }
 	}
 }
 .menu-new-category {

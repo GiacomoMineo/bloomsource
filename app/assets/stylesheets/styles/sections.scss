@@ -9,10 +9,18 @@
 .library-intro {
 	margin-top: 45px;
 	text-align: center;
+
 	.library-intro-header {
-		background-color: $color-accent;
-		padding: 45px 0;
+		background: 
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url(banner.jpg);
+        background-size: cover;
+		padding: 60px 0;
 		color: #fff;
+		
 		text-align: center;
 		@include tablet {
 			text-align: left;
@@ -22,15 +30,17 @@
 			font-size: 36px;
 			font-weight: bold;
 			margin-top: 16px;
-			letter-spacing: 1px;
+			letter-spacing: -1px;
 		}
 		.library-intro-desc {
-			font-size: 14px;
+			font-size: 16px;
+			font-weight: bold;
 		}
 	}
 }
 .library-intro-banner {
-	background-color: $color-light;
+	background-color: $color-fade-medium;
+	
 	width: 100%;
 	padding: 8px 0;
 	@extend %clearfix;
@@ -69,6 +79,54 @@
 		font-weight: bold;
 		color: #000;
 	}
+}
+
+.library-cat {
+	@extend %clearfix;
+	> div {
+		padding: 0;
+		.lib-cat {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			background-size: cover;
+			padding: 90px 0;
+			h2 {
+				color: #fff;
+				margin: 0;
+				font-size: 24px;
+				font-weight: bold;
+				text-align: center;
+				z-index: 2;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.1);
+				@include transition(background 0.3s ease);
+			}
+			&:hover {
+				h2 {
+					color: #fff;
+				}
+				&::before {
+					background-color: rgba(0,0,0,0.3);
+				}
+			}
+		}
+	}
+	.lib-c-1 { background-image: url('content-entrepreneurship.jpg'); }
+	.lib-c-2 { background-image: url('content-team.jpg'); }
+	.lib-c-3 { background-image: url('content-product.jpg'); }
+	.lib-c-4 { background-image: url('content-design.jpg'); }
+	.lib-c-5 { background-image: url('content-marketing.jpg'); }
+	.lib-c-6 { background-image: url('content-data.jpg'); }
+	.lib-c-7 { background-image: url('content-productivity.jpg'); }
+	.lib-c-8 { background-image: url('content-money.jpg'); }
 }
 
 // Content

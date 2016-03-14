@@ -44,6 +44,10 @@ h1, h2, h3 {
 	padding: 45px 0 15px;
 }
 
+.main-content-landing {
+	padding-bottom: 58px;
+}
+
 // Anchor reset
 a {
 	text-decoration: none;
@@ -110,7 +114,7 @@ $height: 45px;
 	.logo-type {
 		font-family: 'PT Serif', serif;
 		display: inline-block;
-		color: $color-main;
+		color: $color-main-2;
 		font-weight: bold;
 		font-size: 28px;
 	}

@@ -64,7 +64,9 @@
 				</div>
 			<% end %>
 			<div class="row">
-				<% if @library && @library.topic %>
+				<% if @landing %>
+					<div class="main-content-landing">
+				<% elsif @library && @library.topic %>
 					<div class="col-lg-3 col-lg-offset-1 col-sm-3 col-xs-0 aside-content">
 						<%= render 'shared/library_menu.html.erb' %>
 					</div>

@@ -1,1 +1,72 @@
-<div class="stickysidebar library-intro-suggestion"><p>Select a topic from the menu or use the search bar to get started.</p></div>
+<div class="library-cat">
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-1 col-xs-12" href="/sections/<%= @library.categories[0].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Entrepreneurship</h2>
+				</div>
+			</a>
+	</div>
+	<% if @library.categories[1] %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-2 col-xs-12" href="/sections/<%= @library.categories[1].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Team</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+	<% if @library.categories[2].sections.first %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-3 col-xs-12" href="/sections/<%= @library.categories[2].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Product</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+	<% if @library.categories[3].sections.first %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-4 col-xs-12" href="/sections/<%= @library.categories[3].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Design</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+	<% if @library.categories[4].sections.first %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-5 col-xs-12" href="/sections/<%= @library.categories[4].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Marketing</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+	<% if @library.categories[5].sections.first %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-6 col-xs-12" href="/sections/<%= @library.categories[5].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Data</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+	<% if @library.categories[6].sections.first %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-7 col-xs-12" href="/sections/<%= @library.categories[6].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Productivity</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+	<% if @library.categories[7].sections.first %>
+	<div class="col-lg-3 col-sm-6">
+			<a class="lib-cat lib-c-8 col-xs-12" href="/sections/<%= @library.categories[7].sections.first.slug %>">
+				<div class="col-xs-12">
+					<h2>Money &amp; Legal</h2>
+				</div>
+			</a>
+	</div>
+	<% end %>
+</div>
