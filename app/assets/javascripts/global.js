@@ -67,11 +67,13 @@ ready = function() {
 		e.preventDefault();
 		$('.overlay').hide();
 		$('#signup-popup').fadeIn(200);
+		$('.navbar-toggle').click();
 	});
 	$('.login-btn:not(.landing)').click(function(e) {
 		e.preventDefault();
 		$('.overlay').hide();
 		$('#login-popup').fadeIn(200);
+		$('.navbar-toggle').click();
 	});
 	$('.close-popup').click(function() {
 		$('.overlay').hide();
