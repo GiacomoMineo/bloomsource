@@ -24,4 +24,9 @@ class User < ActiveRecord::Base
     (roles || []).map{|r| r.title.to_sym}.append(:user)
   end
 
+  protected
+  def confirmation_required?
+    false
+  end
+
 end
