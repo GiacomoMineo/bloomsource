@@ -48,7 +48,7 @@ class Entry < ActiveRecord::Base
 	end
 
 	acts_as_votable
-	acts_as_readable :on => :created_at
+	#acts_as_readable :on => :created_at
 
 	belongs_to :group
 	belongs_to :section
