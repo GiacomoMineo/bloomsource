@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(version: 20160314111344) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "informers", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "invitations", force: :cascade do |t|
     t.integer  "creator_id"
     t.integer  "library_id"

@@ -82,15 +82,17 @@
 }
 
 .library-cat {
+	margin: 15px 0;
 	@extend %clearfix;
 	> div {
-		padding: 0;
+		padding: 30px;
 		.lib-cat {
 			display: inline-block;
 			position: relative;
 			width: 100%;
 			background-size: cover;
 			padding: 90px 0;
+			border-radius: 50%;
 			h2 {
 				color: #fff;
 				margin: 0;
@@ -106,7 +108,8 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color: rgba(0,0,0,0.1);
+				border-radius: 50%;
+				background-color: rgba(0,0,0,0.3);
 				@include transition(background 0.3s ease);
 			}
 			&:hover {
@@ -114,7 +117,7 @@
 					color: #fff;
 				}
 				&::before {
-					background-color: rgba(0,0,0,0.3);
+					background-color: rgba(0,0,0,0.5);
 				}
 			}
 		}
