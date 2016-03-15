@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  after_create :send_welcome_email
+
+
   has_and_belongs_to_many :roles
   has_and_belongs_to_many :moderated_libraries, :class_name => "Library"
   # Include default devise modules. Others available are:
@@ -23,5 +26,16 @@ class User < ActiveRecord::Base
   def role_symbols
     (roles || []).map{|r| r.title.to_sym}.append(:user)
   end
+
+  protected
+  def confirmation_required?
+    false
+  end
+
+  private
+
+    def send_welcome_email
+      WelcomeMailer.welcome_email(self).deliver
+    end
 
 end
