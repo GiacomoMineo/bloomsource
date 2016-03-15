@@ -8,8 +8,8 @@ $footer-height: 58px;
 	.footer {
 		position: relative;
 		padding: 12px;
-		background-color: $color-secondary;
-		color: #fff;
+		background-color: #fff;
+		color: #000;
 	}
 	.footer-panel {
 		position: absolute;
@@ -42,12 +42,12 @@ $footer-height: 58px;
 				display: inline-block;
 				padding: 0 12px;
 				a {
-					color: #fff;
+					color: $color-fade;
 					font-size: 12px;
 					font-weight: bold;
 					@include transition(color 0.3s ease);
 					&:hover {
-						color: $color-main-light;
+						color: #000;
 					}
 				}
 			}

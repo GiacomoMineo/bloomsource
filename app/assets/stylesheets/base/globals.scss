@@ -24,7 +24,7 @@ h1, h2, h3 {
 }
 
 // Global
-.main-content {
+.main-content, .main-content-classic {
 	@include tablet {
 		padding-top: 30px;
 	}
