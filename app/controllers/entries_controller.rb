@@ -18,10 +18,10 @@ class EntriesController < ApplicationController
 		redirect_to request.referer || '/' #go back where we came from
 	end
 
-	def read
-		@entry.mark_as_read! :for => current_user
-		redirect_to request.referer || '/' #go back where we came from
-	end
+	#def read
+	#	@entry.mark_as_read! :for => current_user
+	#	redirect_to request.referer || '/' #go back where we came from
+	#end
 
 	def new
 		@groups = @library.groups
