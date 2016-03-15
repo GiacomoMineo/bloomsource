@@ -192,13 +192,14 @@ ready = function() {
       additionalMarginTop: 75
     });
 
-
+	/*
 	pad = ($('.lib-cat').width() - $('.lib-cat h2').height()) / 2;
     $('.lib-cat').css('padding-top', pad).css('padding-bottom', pad);
     $(window).resize(function() {
     	pad = ($('.lib-cat').width() - $('.lib-cat h2').height()) / 2;
     	$('.lib-cat').css('padding-top', pad).css('padding-bottom', pad);
     });
+    */
 
 	bind_group_filter();
 	enable_tooltips();
