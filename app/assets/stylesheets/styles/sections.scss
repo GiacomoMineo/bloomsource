@@ -86,6 +86,7 @@
 	@extend %clearfix;
 	> div {
 		padding: 30px;
+		@extend %clearfix;
 		.lib-cat {
 			display: inline-block;
 			position: relative;
