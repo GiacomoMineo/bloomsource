@@ -11,7 +11,16 @@
         <li class="group-nav-item group-all group-nav-current"><div class="group-name"><span>All</span></div></li>
         <% @groups.each do |group_nav| %>
           <% unless @entries.select {|e| e.group == group_nav }.empty? %>
-            <li class="group-nav-item" id="group_<%= group_nav.id %>"><div class="group-name"><span><%= group_nav.name %></span></div></li>
+            <li class="group-nav-item" id="group_<%= group_nav.id %>">
+              <div class="group-name">
+                <% if group_nav.name == "Read" %><span class="glyphicon glyphicon-book"></span><% end %>
+                <% if group_nav.name == "Watch" %><span class="glyphicon glyphicon-facetime-video"></span><% end %>
+                <% if group_nav.name == "Online Course" %><span class="glyphicon glyphicon-blackboard"></span><% end %>
+                <% if group_nav.name == "Toolbox" %><span class="glyphicon glyphicon-briefcase"></span><% end %>
+                <% if group_nav.name == "Listen" %><span class="glyphicon glyphicon-headphones"></span><% end %>
+                <span><%= group_nav.name %></span>
+              </div>
+            </li>
           <% end %>
         <% end %>
       </ul>
@@ -32,6 +41,11 @@
     </div>
     <div class="entry-info">
       <% if entry.author != "" %><span class="entry-author">by <%= entry.author %> / </span><% end %>
+      <% if entry.group.name == "Read" %><span class="entry-group-icon glyphicon glyphicon-book"></span><% end %>
+      <% if entry.group.name == "Watch" %><span class="entry-group-icon glyphicon glyphicon-facetime-video"></span><% end %>
+      <% if entry.group.name == "Online Course" %><span class="entry-group-icon glyphicon glyphicon-blackboard"></span><% end %>
+      <% if entry.group.name == "Toolbox" %><span class="entry-group-icon glyphicon glyphicon-briefcase"></span><% end %>
+      <% if entry.group.name == "Listen" %><span class="entry-group-icon glyphicon glyphicon-headphones"></span><% end %>
       <span class="entry-group"><%= entry.group.name %></span>
       <% if entry.readingtime != 0 %><span class="entry-readingtime">/ <%= entry.readingtime %> minutes</span><% end %>
     </div>

@@ -192,6 +192,13 @@
 		color: $color-text-dark;
 		background-color: $color-fade-medium;
 	}
+	> span {
+		display: inline-block;
+		&.glyphicon {
+			padding-right: 4px;
+			font-size: 12px;
+		}
+	}
 }
 .group-all span { line-height: 21px; }
 .group-all:not(.group-nav-current) {
@@ -236,10 +243,14 @@ $entry-spacing: 8px;
 			color: $color-fade-dark;
 		}
 		.entry-author {
-
+			padding-right: 4px;
 		}
 		.entry-group {
 			font-weight: bold;
+		}
+		.entry-group-icon {
+			font-size: 13px;
+			font-style: normal;
 		}
 		.entry-readingtime {
 
