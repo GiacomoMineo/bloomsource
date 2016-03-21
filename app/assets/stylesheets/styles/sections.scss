@@ -39,7 +39,7 @@
 	}
 }
 .library-intro-banner {
-	background-color: $color-fade-medium;
+	background-color: #F4F4F4;
 	
 	width: 100%;
 	padding: 8px 0;
@@ -175,8 +175,8 @@
 		.group-name {
 			cursor: default;
 			padding: 4px 24px;
-			color: $color-main-dark-extra;
-			background-color: $color-main-light;
+			color: #fff;
+			background-color: $color-main;
 		}
 	}
 }

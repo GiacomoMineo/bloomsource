@@ -95,7 +95,7 @@ $section-line-height: 24px;
 	.menu-section-link {
 		font-size: 14px;
 		font-weight: normal;
-		color: $color-fade;
+		color: #959595;
 		text-decoration: none;
 		line-height: $section-line-height;
 	}
@@ -103,8 +103,9 @@ $section-line-height: 24px;
 		float: right;
 		padding-left: 4px;
 		font-size: 11px;
+		color: #959595;
 		> span {
-			color: $color-text-light;
+			color: #959595;
 			padding-left: 4px;
 		}
 	}

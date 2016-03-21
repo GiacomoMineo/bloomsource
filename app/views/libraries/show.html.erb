@@ -53,22 +53,26 @@
 			</a>
 	</div>
 	<% end %>
-	<% if @library.categories[6].sections.first %>
-	<div class="col-lg-3 col-sm-6">
-			<a class="lib-cat lib-c-7 col-xs-12" href="/sections/<%= @library.categories[6].sections.first.slug %>">
-				<div class="col-xs-12">
-					<h2>Productivity</h2>
-				</div>
-			</a>
-	</div>
+	<% if @library.categories[6] %>
+		<% if @library.categories[6].sections.first %>
+		<div class="col-lg-3 col-sm-6">
+				<a class="lib-cat lib-c-7 col-xs-12" href="/sections/<%= @library.categories[6].sections.first.slug %>">
+					<div class="col-xs-12">
+						<h2>Productivity</h2>
+					</div>
+				</a>
+		</div>
+		<% end %>
 	<% end %>
-	<% if @library.categories[7].sections.first %>
-	<div class="col-lg-3 col-sm-6">
-			<a class="lib-cat lib-c-8 col-xs-12" href="/sections/<%= @library.categories[7].sections.first.slug %>">
-				<div class="col-xs-12">
-					<h2>Money &amp; Legal</h2>
-				</div>
-			</a>
-	</div>
+	<% if @library.categories[7] %>
+		<% if @library.categories[7].sections.first %>
+		<div class="col-lg-3 col-sm-6">
+				<a class="lib-cat lib-c-8 col-xs-12" href="/sections/<%= @library.categories[7].sections.first.slug %>">
+					<div class="col-xs-12">
+						<h2>Money &amp; Legal</h2>
+					</div>
+				</a>
+		</div>
+		<% end %>
 	<% end %>
 </div>
