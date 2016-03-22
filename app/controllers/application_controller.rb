@@ -78,5 +78,4 @@ class ApplicationController < ActionController::Base
 		@section = Section.find(params[:section_id])
 	end
 
-
 end
