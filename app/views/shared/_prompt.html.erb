@@ -1,11 +1,87 @@
 <div>
 	<div class="adv-wrapper">
 	    <div class="adv">
-	    	<p class="adv-content">You need to be logged in to perform this action</p>
-	      	<div class="adv-cta">
-	        	<div><%= link_to "Sign up", new_user_registration_path, :class => 'btn signup-btn small', id: "signup-btn" %></div>
-	        	<span>Already have account?</span><%= link_to "Login", new_user_session_path, :class => 'btn login-btn small', id: "login-btn" %>
-	      	</div>
+	    	<ul class="nav nav-tabs" role="tablist">
+	    		<li class="logo"><span class="logo-type">Bloomsource</span></li>
+	    		<li role="presentation" class="active"><a href="#signuptab" aria-controls="signuptab" role="tab" data-toggle="tab">Sign Up</a></li>
+			    <li role="presentation"><a href="#logintab" aria-controls="logintab" role="tab" data-toggle="tab">Login</a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane fade in active" id="signuptab">
+					<!--
+					<ul class="signup-methods">
+						<li><a class="fb" href="#">Sign in with Facebook</a></li>
+						<li><a class="ggl" href="#">Sign in with Google</a></li>
+						<li><a class="git" href="#">Sign in with Github</a></li>
+					</ul>
+					<div class="adv-sep"></div>
+					-->
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {:id => 'signup_form'}, format: :json, remote: true) do |f| %>
+						<%= devise_error_messages! %>
+						<div class="in-row">
+							<%= f.text_field :user_name, autofocus: true, class: "in-field", id: "in-uname" %>
+							<label class="in-label" for="in-uname">
+								<span class="in-label-content" data-content="Username">Username</span>
+							</label>
+						</div>
+						<div class="in-row">
+							<%= f.email_field :email, class: "in-field", id: "in-email" %>
+							<label class="in-label" for="in-email">
+								<span class="in-label-content" data-content="E-mail">E-mail</span>
+							</label>
+						</div>
+						<div class="in-row">
+							<%= f.password_field :password, autocomplete: "off", class: "in-field", id: "in-psw" %>
+							<label class="in-label" for="in-psw">
+								<span class="in-label-content" data-content="Password">Password</span>
+							</label>
+						</div>
+						<div class="in-row">
+							<%= f.password_field :password_confirmation, autocomplete: "off", class: "in-field", id: "in-psw-confirm" %>
+							<label class="in-label" for="in-psw-confirm">
+								<span class="in-label-content" data-content="Confirm Password">Confirm Password</span>
+							</label>
+						</div>
+						<div class="in-error"></div>
+						<div class="in-command">
+							<%= f.submit "Sign up", class: "btn btn-primary in-submit" %>
+							<span class="close-prompt">Cancel</span>
+						</div>
+					<% end %>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="logintab">
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:id => 'login_form'}, format: :json, remote: true) do |f| %>
+					<div class="in-row">
+						<%= f.email_field :email, autofocus: true, class: "in-field", id: "in-email-usr" %>
+						<label class="in-label" for="in-email-usr">
+							<span class="in-label-content" data-content="E-mail">E-mail</span>
+						</label>
+					</div>
+					<div class="in-row">
+						<%= f.password_field :password, autocomplete: "off", class: "in-field", id: "in-psw-usr" %>
+						<label class="in-label" for="in-psw-usr">
+							<span class="in-label-content" data-content="Password">Password</span>
+						</label>
+					</div>
+
+					<% if devise_mapping.rememberable? -%>
+						<div class="in-row in-remember">
+							<%= f.check_box :remember_me, id: "remember-me" %>
+							<label for="remember-me"><span><span></span></span>Remember me</label>
+						</div>
+					<% end -%>
+					<div class="in-error"></div>
+
+					<%= link_to "Forgot your password?", new_password_path(resource_name), class: "in-action" %>
+					<%= render "devise/shared/links" %>
+					<div class="in-command">
+						<%= f.submit "Login", class: "btn btn-primary in-submit" %>
+						<span class="close-prompt">Cancel</span>
+					</div>
+					<% end %>
+				</div>
+			</div>
 	    </div>
   	</div>
 </div>
