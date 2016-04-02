@@ -96,7 +96,7 @@ ready = function() {
 		$('.overlay').hide();
 		$('#prompt-popup').fadeIn(200);
 	});
-
+	/*
 	//signup panel
 	$('#signup-btn.landing').click(function(e) {
 		e.preventDefault();
@@ -126,7 +126,7 @@ ready = function() {
 		    };
 		});
 	});
-
+	*/
 	//suggestions
 	// Filter out cookied suggestions
 	function filterTips() {
