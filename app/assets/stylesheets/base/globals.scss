@@ -111,13 +111,13 @@ $height: 45px;
 		vertical-align: middle;
 	}
 	// Logo name
-	.logo-type {
-		font-family: 'PT Serif', serif;
-		display: inline-block;
-		color: $color-main-2;
-		font-weight: bold;
-		font-size: 28px;
-	}
+}
+.logo-type {
+	font-family: 'PT Serif', serif;
+	display: inline-block;
+	color: $color-main-2;
+	font-weight: bold;
+	font-size: 28px;
 }
 .directory-btn-wrapper {
 	text-align: center;
@@ -280,12 +280,21 @@ $height: 45px;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
-	max-width: 340px;
+	width: 340px;
 	background-color: #fff;
 	padding: 24px 32px;
 	border: 3px solid $color-main;
 	border-radius: 20px;
 	text-align: center;
+	&.prompt {
+		padding: 0;
+		width: 340px;
+		border-radius: 0px;
+		border: 3px solid $color-dark;
+		@include tablet {
+			width: 640px;
+		}
+	}
 }
 .close-popup {
 	float: right;
@@ -301,33 +310,140 @@ $height: 45px;
 // Advert
 .adv-wrapper {
 	text-align: center;
+	$pad: 15px;
 	.adv {
-		.adv-content {
-			cursor: default;
-			font-weight: 300;
-			font-size: 14px;
-			margin: 12px 0;
-			color: $color-text-medium-alt;
-		}
-		.adv-join {
-			cursor: default;
-			font-weight: normal;
-			font-size: 14px;
-			color: $color-text-dark;
-			margin-bottom: 12px;
-		}
-		.adv-cta {
-			> span {
-				font-size: 11px;
-				color: $color-text-light-alt;
-				vertical-align: middle;
-			}
-			> a {
+		.nav-tabs {
+			padding: $pad $pad 0 $pad;
+			background-color: $color-main;
+			text-align: center;
+			> li {
+				float: none;
 				display: inline-block;
-				vertical-align: middle;
+				@include tablet {
+					float: right;
+				}
+				&.logo {
+					display: block;
+					width: 100%;
+					margin-bottom: 15px;
+					@include tablet {
+						width: auto;
+						margin-bottom: 0;
+						float: left;
+					}
+					.logo-type {
+						color: #fff;
+						cursor: default;
+					}
+				}
+				a {
+					font-size: 14px;
+					font-weight: bold;
+					text-transform: uppercase;
+					color: #fff;
+					@include tablet {
+						padding-bottom: $pad + 15;
+					}
+				}
+				&.active {
+					a {
+						color: #000;
+					}
+				}
+				&:hover:not(.active) {
+					a {
+						background-color: $color-dark;
+						color: $color-dark-2;
+					}
+				}
 			}
-			> div {
-				margin-bottom: 2px;
+		}
+		$w-phone: 240px;
+		$w-normal: 280px;
+		.tab-content {
+			padding: $pad;
+			@extend %clearfix;
+			.in-row {
+				width: $w-phone;
+				margin: 14px 4px 4px;
+				@include tablet {
+					width: $w-phone;
+				}
+				.in-field {
+					font-size: 14px;
+				}
+			}
+			.btn {
+				display: inline-block;
+				margin: 0;
+				width: $w-phone;
+				@include tablet {
+					width: $w-phone;
+				}
+			}
+			.in-remember {
+				margin-bottom: 12px;
+			}
+			.in-command {
+				margin: 10px auto 0 auto;
+				@extend %clearfix;
+				@include tablet {
+					width: 480px;
+					margin: 30px auto 15px auto;
+				}
+				> span {
+					display: inline-block;
+					padding: 12px;
+					cursor: pointer;
+					color: $color-fade;
+					vertical-align: middle;
+					@include tablet {
+						float: right;
+					}
+				}
+				.in-submit {
+					@include tablet {
+						float: right;
+					}
+					vertical-align: middle;
+				}
+			}
+			.in-action {
+				padding-bottom: 4px;
+			}
+			.signup-methods {
+				padding: 15px 0;
+				margin: 0;
+				list-style: none;
+				> li {
+					display: inline-block;
+					width: $w-phone;
+					margin: 4px;
+					@include tablet {
+						width: $w-phone;
+					}
+					a {
+						display: inline-block;
+						width: 100%;
+						padding: 6px 12px;
+						margin-bottom: 4px;
+						color: #fff;
+						border-radius: 3px;
+						background-color: $color-fade;
+						&.fb { background-color: #3b5998; }
+						&.ggl { background-color: #dd4b39; }
+						&.git { background-color: #000; }
+					}
+				}
+			}
+			.adv-sep {
+				border-bottom: 1px solid $color-dark;
+				padding-top: 4px;
+				margin-bottom: 12px;
+				@include tablet {
+					padding-top: 10px;
+					margin-bottom: 16px;
+				}
 			}
 		}
 	}

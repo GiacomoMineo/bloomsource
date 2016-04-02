@@ -79,14 +79,25 @@ ready = function() {
 			$('.navbar-toggle').click();
 		};
 	});
-	$('.close-popup').click(function() {
+	$('.close-popup, .close-prompt').click(function() {
 		$('.overlay').hide();
 	});
-	$('.popup').click(function(e) {
-		e.stopPropagation();
-	})
-	$('.overlay').click(function() {
+	$(document).on('click', function(event) {
+		if (!$(event.target).hasClass('signup-btn') && !$(event.target).hasClass('login-btn')) {
+			if (!$(event.target).closest('.popup').length) {
+		    	$('.overlay').hide();
+			}
+		}
+	});
+
+	// Contribute prompt
+	$('.contribute:not(.not-logged)').click(function(e) {
+		e.preventDefault();
 		$('.overlay').hide();
+		$('#contribute-popup').fadeIn(200);
+		if($(window).width() < 768) {
+			$('.navbar-toggle').click();
+		};
 	});
 
 	// Login prompt

@@ -202,6 +202,21 @@
 			outline: none;
 			border: none;
 		}
+		&::-webkit-input-placeholder {
+		   color: #000;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+		   color: #000;  
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+		   color: #000;  
+		}
+
+		&:-ms-input-placeholder {  
+		   color: #000;  
+		}
 	}
 	.search-label {
 		position: absolute;

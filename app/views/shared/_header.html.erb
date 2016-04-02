@@ -51,6 +51,7 @@
 							<li><%= link_to toggle_read_path, method: :put do %><span class="glyphicon glyphicon-book"></span>Read Mode<% end %></li>
 						<% end %>
 					<% end %>
+					<li><%= link_to "Sign up", "#", :class => 'btn signup-btn small nav-btn not-logged', id: "signup-btn-header" %></li>
 					<li class="user-btn"><span class="user-toggle"><%= current_user.user_name %></span>
 						<div class="user-dropdown">
 							<%= link_to edit_user_registration_path do %>
@@ -65,7 +66,7 @@
 					</li>
 				<% else %>
 					<li>
-						<%= link_to "Sign up", new_user_registration_path, :class => 'btn signup-btn small nav-btn', id: "signup-btn-header" %>
+						<%= link_to "Sign up", new_user_registration_path, :class => 'btn signup-btn small nav-btn not-logged', id: "signup-btn-header" %>
 					</li>
 					<li>
 						<%= link_to "Login", new_user_session_path, :class => 'btn login-btn small nav-btn', id: "login-btn-header" %>
@@ -90,8 +91,14 @@
 	</div>
 </div>
 <div class="overlay" id="prompt-popup">
-	<div class="popup row">
-		<span class="close-popup glyphicon glyphicon-remove-sign"></span>
+	<div class="popup prompt row">
 		<%= render 'shared/prompt' %>
 	</div>
 </div>
+<!--
+<div class="overlay" id="contribute-popup">
+	<div class="popup row">
+		<h2>Contribute</h2>
+	</div>
+</div>
+-->
