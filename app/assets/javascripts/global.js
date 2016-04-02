@@ -83,8 +83,9 @@ ready = function() {
 		$('.overlay').hide();
 	});
 	$(document).on('click', function(event) {
-		if (!$(event.target).hasClass('signup-btn') && !$(event.target).hasClass('login-btn')) {
+		if (!$(event.target).hasClass('signup-btn') && !$(event.target).hasClass('login-btn') && !$(event.target).hasClass('navbar-toggle')) {
 			if (!$(event.target).closest('.popup').length) {
+				
 		    	$('.overlay').hide();
 			}
 		}
