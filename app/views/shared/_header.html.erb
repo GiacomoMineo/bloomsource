@@ -51,7 +51,6 @@
 							<li><%= link_to toggle_read_path, method: :put do %><span class="glyphicon glyphicon-book"></span>Read Mode<% end %></li>
 						<% end %>
 					<% end %>
-					<li><%= link_to "Sign up", "#", :class => 'btn signup-btn small nav-btn not-logged', id: "signup-btn-header" %></li>
 					<li class="user-btn"><span class="user-toggle"><%= current_user.user_name %></span>
 						<div class="user-dropdown">
 							<%= link_to edit_user_registration_path do %>
