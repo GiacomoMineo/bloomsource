@@ -80,12 +80,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.mandrillapp.com",
-    :port                 => 587,
-    :user_name            => "linkhoven@gmail.com",
-    :password             => "0_IiR0wadASbW2JyRnDF6w",
+    :address              => ENV["MAILGUN_SMTP_SERVER"],
+    :port                 => ENV["MAILGUN_SMTP_PORT"],
+    :user_name            => ENV["MAILGUN_SMTP_LOGIN"],
+    :password             => ENV["MAILGUN_SMTP_PASSWORD"],
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { :host => 'coilbee.com' }
+  config.action_mailer.default_url_options = { :host => 'bloomsource.co' }
 end
